@@ -1,7 +1,5 @@
-FROM openjdk:17
+FROM eclipse-temurin:17-jre
 WORKDIR /App
-
-COPY /target/Point-of-sale-0.0.1-SNAPSHOT.jar .
-
-
-ENTRYPOINT ["java", "-jar" , "Point-of-sale-0.0.1-SNAPSHOT.jar"]
+COPY target/*.jar app.jar
+EXPOSE 8282
+ENTRYPOINT ["java","-jar","app.jar"]
